@@ -1,0 +1,55 @@
+# Unified Conda environment for all Python services
+# (backend, algo_service, media_service, paddle-ocr).
+#
+# Python 3.12 — the highest version supported by both PyTorch and PaddlePaddle.
+#
+# After creating the environment, install the model packages:
+#   cd models/sam3   && pip install -e ".[all]"
+#   cd models/RoMaV2 && pip install -e .
+#
+# Usage:
+#   conda env create -f envs/pic_cmp.yml
+#   conda activate pic_cmp
+
+name: pic_cmp
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pytorch>=2.1
+  - torchvision
+  - pytorch-cuda=12.1
+  - numpy
+  - pip
+  - pip:
+      # --- vision / image ---
+      - opencv-python-headless
+      - pillow
+      # --- web framework ---
+      - fastapi>=0.100
+      - uvicorn[standard]
+      - python-multipart
+      # --- data / io ---
+      - openpyxl
+      - pandas
+      - requests
+      - tqdm
+      # --- video ---
+      - scenedetect[opencv]
+      - decord
+      # --- ML / model deps ---
+      - einops
+      - huggingface_hub
+      - transformers
+      - timm
+      - iopath
+      - pycocotools
+      - psutil
+      - scipy
+      # --- PaddlePaddle / OCR ---
+      - paddlepaddle-gpu
+      - paddleocr>=2.9
+      - paddlex

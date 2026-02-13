@@ -1,0 +1,43 @@
+RoMa/
+sam3/
+video/
+RoMaV2/
+sam3/
+# Local model/checkpoint folders
+BGE-VL/
+DINOv3/
+
+# Keep paddle-ocr tracked
+!paddle-ocr/
+
+# paddle-ocr generated assets
+paddle-ocr/__pycache__/
+paddle-ocr/*.whl
+paddle-ocr/PP-OCR*/
+paddle-ocr/output/
+paddle-ocr/logs/
+paddle-ocr/tmp/
+paddle-ocr/*.log
+
+# Python caches (in case anything gets added later)
+__pycache__/
+*.pyc
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Backend
+backend/.venv/
+backend/__pycache__/
+
+# Data
+data/
+backend/data/uploads/
+
+# Claude Code
+CLAUDE.md
+.claude/
+AGENTS.md
+paddle-ocr/AGENTS.md

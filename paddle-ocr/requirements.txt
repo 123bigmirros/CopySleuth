@@ -1,0 +1,9 @@
+paddleocr
+paddlex
+opencv-python
+pandas
+openpyxl
+tqdm
+fastapi
+uvicorn
+scenedetect
